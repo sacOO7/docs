@@ -36,7 +36,7 @@ _This section is only applicable to Ably staff._
 
 This configuration is not required for basic documentation creation and modification, so most editors can simply skip to [Forking and running locally](#forking-and-running-locally).
 
-If you will be creating or modifying code within this repository that is to be uploaded automatically to [JSBin](https://jsbin.ably.io/), for our "Try it now code editor", then you will need to create yourself a JSBin config file:
+If you will be creating or modifying code within this repository that is to be uploaded automatically to [JSBin](https://jsbin.ably.com/), for our "Try it now code editor", then you will need to create yourself a JSBin config file:
 
 To obtain the API key you need to run this command in the terminal, you must ensure you have installed the `heroku-cli`  tools (Instructions on [installing the Heroku toolbelt](https://devcenter.heroku.com/articles/heroku-cli) ) and postgresl ([PostgreSQL Downloads](https://www.postgresql.org/download/))
 
@@ -96,8 +96,8 @@ docker-compose up
 This will output a huge list that looks similar to this, as each file is checked
 
 ```bash
-Published new JsBin for hub-product/http-javascript at https://jsbin.ably.io:443/ujehow/1/edit?javascript,live
-Copied https://jsbin.ably.io:443/ujehow/1/edit?javascript,live to clipboard
+Published new JsBin for hub-product/http-javascript at https://jsbin.ably.com:443/ujehow/1/edit?javascript,live
+Copied https://jsbin.ably.com:443/ujehow/1/edit?javascript,live to clipboard
     create  [0.49s]  output/code/realtime/channel-deltas-sse/index.html
     update  [1.10s]  output/sse/index.html
     update  [1.02s]  output/concepts/socketio/index.html
@@ -118,9 +118,9 @@ jsbin_id:
 ---
 ```
 
-**NOTE**: if you take that `ID` and use the format http://jsbin.ably.io/ID/edit, you will get the JSBin matching that code sample, [http:\/\/jsbin.ably.io/ujehow/edit](http://jsbin.ably.io/ujehow/edit)
+**NOTE**: if you take that `ID` and use the format http://jsbin.ably.com/ID/edit, you will get the JSBin matching that code sample, [http:\/\/jsbin.ably.com/ujehow/edit](http://jsbin.ably.com/ujehow/edit)
 
-One of the nifty things it does is replace API keys with live API keys dynamically. So for example, https://jsbin.ably.io/enagak/1/edit currently has API key `xVLyHw.mDQnPQ:IXCte59B2XjpNRV4`. Now change the extension to `.textile` i.e. https://jsbin.ably.io/enagak/2.textile, and voilà - you now have a file you can copy & paste back into the docs repo, but **importantly**, it is intelligent enough to detect a docs or demo **API key**, and replace it with a variable **{{API_KEY}}**.
+One of the nifty things it does is replace API keys with live API keys dynamically. So for example, https://jsbin.ably.com/enagak/1/edit currently has API key `xVLyHw.mDQnPQ:IXCte59B2XjpNRV4`. Now change the extension to `.textile` i.e. https://jsbin.ably.com/enagak/2.textile, and voilà - you now have a file you can copy & paste back into the docs repo, but **importantly**, it is intelligent enough to detect a docs or demo **API key**, and replace it with a variable **{{API_KEY}}**.
 
 This ensures our JSBin demo's are always rendered with working API keys.
 
@@ -159,7 +159,7 @@ _For those who use [ASDF](https://github.com/asdf-vm/asdf) or compatible tooling
 ## Publishing to JSBin
 
 If you will be creating or modifying code within this repository that is to be uploaded automatically
-to [JSBin](https://jsbin.ably.io/), for our "Try it now code editor",
+to [JSBin](https://jsbin.ably.com/), for our "Try it now code editor",
 then you will need to create yourself a JSBin config file:
 
     cp config/jsbin_config.example.yaml config/jsbin_config.yaml
