@@ -3,6 +3,7 @@ source 'http://rubygems.org/'
 ruby File.read(File.expand_path("../.ruby-version", __FILE__)).strip
 
 gem 'nanoc', '~>4.11'
+gem 'nanoc-redirector'
 gem 'RedCloth'
 gem 'kramdown'
 gem 'sass'
@@ -30,3 +31,6 @@ gem 'json'
 # Debugging
 gem 'pry'
 gem 'pry-byebug'
+
+# Content checking
+gem 'nokogiri'

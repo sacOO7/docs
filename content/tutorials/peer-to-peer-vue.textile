@@ -4,7 +4,7 @@ alt_title: Realtime Peer to Peer Demo with Vue.js
 excerpt: Learn to build your own peer to peer apps with Ably and Vue.js
 section: tutorials
 category:
-    - Channels
+    - channels
 group: sdk
 index: 106
 platform: browser
@@ -20,12 +20,12 @@ libraries:
   - Vue.js
 tags:
     - peer to peer
-    - pub/sub
-    - multiplayer game
-    - vue.js
+    - Pub/Sub
+    - Multiplayer game
+    - Vue.js
 ---
 
-h2. Build a Peer to Peer Static Web App with Vue.js
+In this tutorial we will walk through building a basic Peer to Peer demo in a Static Web App which uses Ably channels. This basic demo can be built upon to make games, chat apps and more, basically any kind of communication where you'd rather not have to configure a central server!
 
 "Ably Channels":https://www.ably.io/channels are multicast (many publishers can publish to many subscribers) and we can use them to build peer-to-peer apps.
 
@@ -507,12 +507,12 @@ Now we should update the client to listen for this message. Add a @case@ stateme
 ```[javascript]
     onReceiveMessage(message) {
       if (message.serverState) {
-        this.serverState = message.serverState; 
+        this.serverState = message.serverState;
       }
 
       switch(message.kind) {
-        case "connection-acknowledged": 
-          this.state.status = "acknowledged"; 
+        case "connection-acknowledged":
+          this.state.status = "acknowledged";
           break;
         case "word":
           this.state.receivedWords += " " + message.word;
@@ -535,12 +535,12 @@ Next, we're going to make sure to display this in the UI of every attached clien
 
 ```[html]
   <section v-else class="game-info">
-    <h2>UniqueId: {{ uniqueId }}</h2>    
-    <button v-if="iAmHost" v-on:click="sendWordsAsHost" class="form-button">Stream words to client</button>     
+    <h2>UniqueId: {{ uniqueId }}</h2>
+    <button v-if="iAmHost" v-on:click="sendWordsAsHost" class="form-button">Stream words to client</button>
 
     <h3>Active players: {{ transmittedServerState?.players?.length }}</h3>
     <ul class="players">
-      <li class="player" v-for="user in transmittedServerState?.players">                
+      <li class="player" v-for="user in transmittedServerState?.players">
         <span>{{ user.friendlyName }}</span>
       </li>
     </ul>
@@ -596,7 +596,7 @@ p. So much like our @P2PServer@ will buffer outbound messages, any disconnected 
 
 h3. Using the History API to catch up
 
-Ably offers a @History API@ and a @Rewind@ setting. The History API allows you to query the history of a channel for by default, the last *two minutes* of data. If you enable @persisted history@ on your channel, that window is extended for 24-72 hours (these will count towards your message quotas - "see docs for more on this":https://support.ably.com/support/solutions/articles/3000030059). We can use this extended window to allow clients to join "mid-stream" and catch up when they connect.
+Ably offers a @History API@ and a @Rewind@ setting. The History API allows you to query the history of a channel for by default, the last *two minutes* of data. If you enable @persisted history@ on your channel, that window is extended for 24-72 hours (these will count towards your message quotas - "see docs for more on this":https://knowledge.ably.com/how-long-are-messages-stored-for). We can use this extended window to allow clients to join "mid-stream" and catch up when they connect.
 
 The "Rewind":https://www.ably.io/documentation/realtime/channels/channel-parameters/overview#supported-parameters parameter can be enabled when you subscribe to a channel, which will immediately then receive up to the last 100 messages in the time window you specify.
 
@@ -608,7 +608,7 @@ To enable Rewind, we need to add the parameter @{ params: { rewind: '1m' } }@ to
 async connect(identity, uniqueId) {
   ...
   const ably = new Ably.Realtime.Promise({ authUrl: '/api/createTokenRequest' });
-  this.channel = await ably.channels.get(`p2p-sample-${uniqueId}`, { params: { rewind: '1m' } });  
+  this.channel = await ably.channels.get(`p2p-sample-${uniqueId}`, { params: { rewind: '1m' } });
   ...
 }
 ```
@@ -621,7 +621,7 @@ This is a self contained demo of building peer to peer apps using @Ably Channels
 
 We'd love to see what exciting apps or games you could build on top of this sort of pattern - and to that end, we made one ourselves!
 
-We made a distributed bingo game called @Ablingo@ on top of this code sample - by adding additional messages, logic, and state to our server. You can read a detailed readme of how we extended this sample at the "repository here":https://github.com/thisisjofrank/Ablingo/blob/master/readme.md.
+We made a distributed bingo game called @Ablingo@ on top of this code sample - by adding additional messages, logic, and state to our server. You can read a detailed readme of how we extended this sample at the "repository here":https://github.com/thisisjofrank/Ablingo/.
 
 h2. Running the demo
 
@@ -664,7 +664,3 @@ And run the APIs
 $ cd api
 $ npm run start
 ```
-
-h3. Hosting on Azure
-
-We're hosting this as a Azure Static Web Apps - and the deployment information is in "hosting.md":https://github.com/thisisjofrank/Ablingo/blob/master/readme.md#hosting-on-azure.

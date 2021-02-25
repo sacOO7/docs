@@ -40,15 +40,15 @@ The application we'll build would look as follows:
     <img src="/images/tutorials/ably-kendo-ui/live-bitcoin-price-chart.jpg" style="width: 100%" alt="Live bitcoin price chart demo">
 </a>
 
-"The complete source code for this app is also hosted on GitHub":https://github.com/ably/realtime-use-case-devrel-collaborations/tree/master/ably%3C%3Ekendo-ui
+"The complete source code for this app is also hosted on GitHub":https://github.com/ably/realtime-use-case-devrel-collaborations/tree/main/ably%3C%3Ekendo-ui
 
 h2(#setup). Step 1 - Setting up
 
 h3. a. Getting an Ably API key
 
-Before we get started, you will need an "Ably API key":https://support.ably.com/support/solutions/articles/3000030502-setting-up-and-managing-api-keys to authenticate with Ably. If you are not already signed up, you should "sign up now for a free Ably account":https://www.ably.io/signup. Once you have an Ably account:
+Before we get started, you will need an "Ably API key":https://knowledge.ably.com/setting-up-and-managing-api-keys to authenticate with Ably. If you are not already signed up, you should "sign up now for a free Ably account":https://www.ably.io/signup. Once you have an Ably account:
 
-# "Log into your app dashboard":https://support.ably.com/support/solutions/articles/3000030053-how-do-i-access-my-app-dashboard
+# "Log into your app dashboard":https://knowledge.ably.com/how-do-i-access-my-app-dashboard
 # Under "Your apps", click on the app you wish to use for this tutorial, or create a new one with the "Create New App" button
 # Click on the "API Keys" tab
 # Copy the secret "API Key" value from your Root key and store it so that you can use it later in this tutorial
@@ -213,13 +213,13 @@ Make sure to replace @<YOUR-ABLY-API-KEY>@ in the above code snippet with your r
 
 After initializing the Ably realtime client library, we'll need to attach it to the channel on which the required data is being published and then subscribe to it to receive updates as they happen continuously. All the data sharing in Ably happens over fundamental units called "channels":https://www.ably.io/channels. The @ably.channels.get()@ lets you implicitly attach to a channel. We know the name of the channel from the "product documentation on the Ably Hub":https://www.ably.io/hub/products/20#documentation. In this case, the channel name to be used is @[product:ably-coindesk/bitcoin]bitcoin:usd@.
 
-The "@subscribe()@":/realtime/channels#subscribe method lets you subscribe to the channel to receive realtime updates. After you've done that, Ably will automatically push updates over a duplex connection that will remain open while the application is running. You can "learn more about how WebSockets work":https://www.ably.io/concepts/websockets from our in-depth explanatory article.
+The "@subscribe()@":/realtime/channels#subscribe method lets you subscribe to the channel to receive realtime updates. After you've done that, Ably will automatically push updates over a duplex connection that will remain open while the application is running. You can "learn more about how WebSockets work":https://www.ably.io/topic/websockets from our in-depth explanatory article.
 
 Whenever some data comes through as a callback of the @subscribe()@ method, we simply push the new data in the arrays we set up earlier - which serve as the data source for the Chart UI. We also get the timestamp to be displayed on the horizontal axis, so the data points make more sense.
 
 That's it! You have a neat chart that updates with live data based on real events.
 
-"The complete source code for this app is also hosted on GitHub":https://github.com/ably/realtime-use-case-devrel-collaborations/tree/master/ably%3C%3Ekendo-ui
+"The complete source code for this app is also hosted on GitHub":https://github.com/ably/realtime-use-case-devrel-collaborations/tree/main/ably%3C%3Ekendo-ui
 
 h2(further-reading). Further reading
 

@@ -24,8 +24,8 @@ Further, assuming that the game can only start when at least two participants co
 
 Hence, let's consider three channels to solve all of the above (of course, the actual number of channels depends on your particular use case). The illustration below gives a broad view of the data flow between players and the server for an app such as HQ trivia when implemented using Ably
 
-<a href="/images/diagrams/dp-hq-style.png" target="_blank">
-  <img src="/images/diagrams/dp-hq-style.png" style="width: 100%" alt="HQ style apps design pattern using Ably">
+<a href="/images/diagrams/Ably-Design-Pattern---HQ-Style-games.gif" target="_blank">
+  <img src="/images/diagrams/Ably-Design-Pattern---HQ-Style-games.gif" style="width: 100%" alt="HQ style apps design pattern using Ably">
 </a>
 
 h2(#channels). Channels
@@ -46,7 +46,7 @@ The final one is the publish channel. This can be used by the clients in a parti
 
 h2(#order). Latencies are sorted but what about the order of messages?
 
-* Ably ensures that messages are delivered to persistently connected subscribers on a channel in the order they were published on that channel by any other Ably client when using one of the Realtime libraries. Read more about it in the "support articles":https://support.ably.com/support/solutions/articles/3000044641-reliable-message-ordering-for-connected-clients.
+* Ably ensures that messages are delivered to persistently connected subscribers on a channel in the order they were published on that channel by any other Ably client when using one of the Realtime libraries. Read more about it in the "support articles":https://knowledge.ably.com/reliable-message-ordering-for-connected-clients.
 
 h2(#caveats). Caveats
 
